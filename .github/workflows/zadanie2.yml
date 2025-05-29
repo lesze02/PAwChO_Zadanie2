@@ -56,19 +56,18 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
-          push: false
-          load: true
+          push: true
           cache-from: |
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2_cache
           cache-to: |
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2_cache, mode=max
-          tags: zadanie2:test
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/zadanie2test:sha-${{ github.sha }}
 
       -
         name: Test CVE
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: zadanie2:test
+          image-ref: ${{ vars.DOCKERHUB_USERNAME }}/zadanie2test:sha-${{ github.sha }}
           format: json
           exit-code: 1
           severity: CRITICAL,HIGH
