@@ -67,7 +67,7 @@ jobs:
         name: Test CVE
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: ghcr.io/${{ vars.DOCKERHUB_USERNAME }}/zadanie2:${{ steps.meta.outputs.tags }}
+          image-ref: ${{ steps.meta.outputs.tags }}
           format: json
           exit-code: 1
           severity: CRITICAL,HIGH
