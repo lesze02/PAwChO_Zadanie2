@@ -62,13 +62,13 @@ jobs:
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2_cache
           cache-to: |
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie2_cache, mode=max
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: zadanie2:test
 
       -
         name: Test CVE
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          image-ref: ${{ steps.meta.outputs.short_sha }}
+          image-ref: zadanie2:test
           format: json
           exit-code: 1
           severity: CRITICAL,HIGH
