@@ -95,10 +95,15 @@ jobs:
 Do testowania CVE wykorzystano narzędzie trivy (źródło: https://thomasthornton.cloud/2025/03/18/setting-up-trivy-in-your-github-actions/). Dzięki niemu możliwe było sprawdzenie, czy obraz nie zawiera błędów na poziomie CRITICAL lub HIGH. Trivy jest bardzo wygodnym narzędziem podczas stosowania w GitHub Actions - jest open source, posiada szybkie skanowanie oraz bezpośrednią integrację z GitHub. 
 
 W celu zrealizowania podpunktu c wykorzystano prywatne repozytorium DockerHub:
+
     https://hub.docker.com/r/lesze/zadanie2test
+
 Obraz zbudowany w celu przetestowania jest tam przesyłany, następnie wykonywany jest test CVE i jeśli nie wykryto żadnych nieprawidłowości jest on już finalnie przesyłany do publicznego repozytorium ghcr.io:
+
     https://ghcr.io/lesze02/zadanie2
+
 zgodnie z założeniami podpunktu. Początkowo obraz miał być testowany lokalnie, jednak wystąpiły problemy podczas budowania lokalnie obrazu na dwie architektury. Dane cache znajdują się pod tym linkiem:
+
     https://hub.docker.com/r/lesze/zadanie2_cache
 
 ## Uruchomienie 
