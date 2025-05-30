@@ -108,4 +108,4 @@ zgodnie z założeniami podpunktu. Początkowo obraz miał być testowany lokaln
 
 ## Uruchomienie 
 Pipeline można uruchomić bezpośrednio na stronie repozytorium GitHub, lub poprzez wypchnięcie taga w odpowiednim formacie, zawierającym "v", np. v.1.0.0. Poniższy zrzut ekranu przedstawia poprawność działania łańcucha GitHub Actions:
-!["Wynik działania"](obrazy/wynik.png)
+!["Wynik działania"](Obrazy/wynik.png)
